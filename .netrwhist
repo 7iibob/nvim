@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/al/DB/cnsr-db-queries/subscriptions-queries/post-subscription-email-queries'
+let g:netrw_dirhist_2='/home/al/DB/cnsr-db-queries/subscriptions-queries'
+let g:netrw_dirhist_1='/home/al/DB/cnsr-db-queries'
+let g:netrw_dirhist_0='/home/al/DB'
+let g:netrw_dirhist_9='/home/al/DB/cnsr-db-queries'
+let g:netrw_dirhist_8='/home/al/DB'
+let g:netrw_dirhist_7='/home/al/DB/cnsr-db-queries'
+let g:netrw_dirhist_6='/home/al/DB/subscriptions-queries/post-subscription-email-queries'
+let g:netrw_dirhist_5='/home/al/DB/subscriptions-queries'
+let g:netrw_dirhist_4='/home/al/playground/node/mern/mute_2'
