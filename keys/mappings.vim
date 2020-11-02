@@ -1,8 +1,8 @@
 " Better nav for omnicomplete
 " inoremap <expr> <c-j>
 " inoremap <expr> <c-k>
-inoremap <expr> <c-j> ("\<C-n>")
-inoremap <expr> <c-k> ("\<C-p>")
+ inoremap <expr> <c-j> ("\<C-n>")
+ inoremap <expr> <c-k> ("\<C-p>")
 
 " Use alt + hjkl to resize windows
 nnoremap <M-j>    :resize -2<CR>
@@ -15,8 +15,8 @@ inoremap kj <Esc>
 inoremap jk <Esc>
 
 " Easy CAPS (case)
-inoremap <c-u> <ESC>viwUi
-nnoremap <c-u> viwU<Esc>
+"inoremap <c-u> <ESC>viwUi
+"nnoremap <c-u> viwU<Esc>
 
 " TAB in general mode will move to text buffer
 nnoremap <TAB> :bnext<CR>
@@ -34,7 +34,7 @@ nnoremap <C-Q> :wq!<CR>
 "nnoremap <C-c> <Esc>
 "
 " <TAB>: completion.
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><TAB> pumvisible() ? "\<C-j>" : "\<TAB>"
 
 " Better tabbing
 vnoremap < <gv
@@ -46,19 +46,19 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" prevent new line from becoming a comment if it is
 nnoremap <Leader>o o<Esc>^Da
 nnoremap <Leader>O O<Esc>^Da
 
 
-
-"unhighlight after search
+"unhighlight after search w/ esc
 map <silent><Esc>  :noh<CR>
 
 "close all other buffers
 "nnoremap <C-k>u :%bdelete|edit #|normal `"
 
 "read file if it is modifed externally
-set autoread
+" set autoread
 "set autowrite
 
 set ignorecase
@@ -73,4 +73,11 @@ call SetupCommandAlias("bf","buffers")
 
 nnoremap gll oconsole.log("LINE: <C-r>=line('.')<Esc>","")<Esc>F"i
 
+nnoremap <Leader>sv :source $MYVIMRC<CR>
 
+function ClearRegs() abort
+  let regs=split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-"', '\zs')
+  for r in regs
+    call setreg(r, @_)
+  endfor
+endfun
