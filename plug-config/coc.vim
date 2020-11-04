@@ -142,33 +142,33 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " " Resume latest coc list.
 " nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
-" Explorer
-let g:coc_explorer_global_presets = {
-\   'floating': {
-\      'position': 'floating',
-\   },
-\   'floatingLeftside': {
-\      'position': 'floating',
-\      'floating-position': 'left-center',
-\      'floating-width': 30,
-\   },
-\   'floatingRightside': {
-\      'position': 'floating',
-\      'floating-position': 'right-center',
-\      'floating-width': 30,
-\   },
-\   'simplify': {
-\     'file.child.template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
-\   }
-\ }
+" " Explorer
+" let g:coc_explorer_global_presets = {
+" \   'floating': {
+" \      'position': 'floating',
+" \   },
+" \   'floatingLeftside': {
+" \      'position': 'floating',
+" \      'floating-position': 'left-center',
+" \      'floating-width': 30,
+" \   },
+" \   'floatingRightside': {
+" \      'position': 'floating',
+" \      'floating-position': 'right-center',
+" \      'floating-width': 30,
+" \   },
+" \   'simplify': {
+" \     'file.child.template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
+" \   }
+" \ }
 
-nmap <space>e :CocCommand explorer<CR>
-nmap <space>f :CocCommand explorer --preset floating<CR>
-autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
-"nmap <silent> <space>e :CocCommand explorer<CR>
-" nnoremap <silent> <leader>e :CocCommand explorer<CR>
-" nmap <space>f :CocCommand explorer --preset floatingRightside<CR>
-autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
+"nmap <space>e :CocCommand explorer<CR>
+"nmap <space>f :CocCommand explorer --preset floating<CR>
+"autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
+""nmap <silent> <space>e :CocCommand explorer<CR>
+"" nnoremap <silent> <leader>e :CocCommand explorer<CR>
+"" nmap <space>f :CocCommand explorer --preset floatingRightside<CR>
+"autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 
 " Snippets
 " Use <C-l> for trigger snippet expand.
@@ -186,5 +186,5 @@ let g:coc_snippet_prev = '<c-k>'
 " Use <C-j> for both expand and jump (make expand higher priority.)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
 
-"colorizer
-set termguicolors
+""colorizer
+"set termguicolors

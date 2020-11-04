@@ -20,33 +20,41 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
 
+    Plug 'schickling/vim-bufonly'
 
     "Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
 
-    Plug 'scrooloose/nerdcommenter'
+    "Plug 'scrooloose/nerdcommenter'
     Plug 'tpope/vim-commentary'
 
     Plug 'wesQ3/vim-windowswap'
     Plug 'lambdalisue/suda.vim'
     Plug 'tpope/vim-surround'
-    Plug 'Yggdroot/indentLine'
+    " Plug 'Yggdroot/indentLine'
     "Plug 'https://github.com/adelarsq/vim-matchit'
     Plug 'adelarsq/vim-matchit'
     "Plug 'norcalli/nvim-colorizer.lua'
     "Plug 'ap/vim-css-color'
     Plug 'junegunn/rainbow_parentheses.vim'
 
-    "Plug 'tpope/vim-fugitive'
+    " Git integration
+    Plug 'mhinz/vim-signify'
+    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-rhubarb'
+    Plug 'junegunn/gv.vim'
+
  " FZF
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'airblade/vim-rooter'
 
+Plug 'liuchengxu/vim-which-key'
     " find and replace multiple files
     " Plug 'mhinz/vim-grepper'
     " Plug 'brooth/far.vim'
     " Themes
     Plug 'joshdick/onedark.vim'
+    Plug 'morhetz/gruvbox'
     "Plug 'arcticicestudio/nord-vim'
 
     call plug#end()

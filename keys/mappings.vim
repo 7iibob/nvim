@@ -1,9 +1,15 @@
+let g:mapleader = "\<Space>"
 " Better nav for omnicomplete
-" inoremap <expr> <c-j>
-" inoremap <expr> <c-k>
  inoremap <expr> <c-j> ("\<C-n>")
  inoremap <expr> <c-k> ("\<C-p>")
+" inoremap <expr> <c-j> <C-n>
+" inoremap <expr> <c-k> <C-p>
+" inoremap <expr> <c-j> <C-n>
+" inoremap <expr> <c-k> <C-p>
 
+
+
+"
 " Use alt + hjkl to resize windows
 nnoremap <M-j>    :resize -2<CR>
 nnoremap <M-k>    :resize +2<CR>
@@ -13,6 +19,8 @@ nnoremap <M-l>    :vertical resize +2<CR>
 " I hate escape more than anything else
 inoremap kj <Esc>
 inoremap jk <Esc>
+inoremap kk <Esc>
+inoremap jj <Esc>
 
 " Easy CAPS (case)
 "inoremap <c-u> <ESC>viwUi
@@ -34,7 +42,8 @@ nnoremap <C-Q> :wq!<CR>
 "nnoremap <C-c> <Esc>
 "
 " <TAB>: completion.
-inoremap <expr><TAB> pumvisible() ? "\<C-j>" : "\<TAB>"
+" inoremap <expr><TAB> pumvisible() ? "\<C-j>" : "\<TAB>"
+inoremap <silent> <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Better tabbing
 vnoremap < <gv
@@ -47,11 +56,12 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " prevent new line from becoming a comment if it is
-nnoremap <Leader>o o<Esc>^Da
-nnoremap <Leader>O O<Esc>^Da
+nnoremap <leader>o o<Esc>^Da
+nnoremap <leader>O O<Esc>^Da
 
 
-"unhighlight after search w/ esc
+
+" unhighlight search word 
 map <silent><Esc>  :noh<CR>
 
 "close all other buffers
@@ -63,17 +73,9 @@ map <silent><Esc>  :noh<CR>
 
 set ignorecase
 set smartcase
-
-fun! SetupCommandAlias(from, to)
-  exec 'cnoreabbrev <expr> '.a:from
-        \ .' ((getcmdtype() is# ":" && getcmdline() is# "'.a:from.'")'
-        \ .'? ("'.a:to.'") : ("'.a:from.'"))'
-endfun
-call SetupCommandAlias("bf","buffers")
-
 nnoremap gll oconsole.log("LINE: <C-r>=line('.')<Esc>","")<Esc>F"i
 
-nnoremap <Leader>sv :source $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
 
 function ClearRegs() abort
   let regs=split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-"', '\zs')
@@ -81,3 +83,26 @@ function ClearRegs() abort
     call setreg(r, @_)
   endfor
 endfun
+
+"noremap <C-k>u    :%bdelete|edit #|normal `"<CR>
+noremap <C-k>u    :BufOnly <CR>
+
+vmap <leader>p  <Plug>(coc-format-selected)
+nmap <leader>p  <Plug>(coc-format-selected)
+
+
+
+
+fun! SetupCommandAlias(from, to)
+  exec 'cnoreabbrev <expr> '.a:from
+        \ .' ((getcmdtype() is# ":" && getcmdline() is# "'.a:from.'")'
+        \ .'? ("'.a:to.'") : ("'.a:from.'"))'
+endfun
+call SetupCommandAlias("bf","buffers")
+"call SetupCommandAlias("cmm","Commentary")
+
+
+" fugitive
+nmap <leader>gh :diffget //3<CR>
+nmap <leader>gu :diffget //2<CR>
+nmap <leader>gs :G<CR>
