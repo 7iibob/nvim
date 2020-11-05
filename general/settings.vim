@@ -37,8 +37,8 @@ set autochdir                           " Your working directory will always be 
 
 " set textwidth=80
 " set wrapmargin=80
-" set listchars=tab:\|\  
-" set list
+ set listchars=tab:\|\  
+set list
 " set cursorcolumn
 " set cursorline
 " set foldcolumn=5
