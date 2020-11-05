@@ -73,7 +73,18 @@ map <silent><Esc>  :noh<CR>
 
 set ignorecase
 set smartcase
+
 nnoremap gll oconsole.log("LINE: <C-r>=line('.')<Esc>","")<Esc>F"i
+
+" func LogIt()
+"   let currentWord = expand("<cword>")
+"   echom currentWord
+"    oconsole.log("LINE: <C-r>=line('.') <Esc>currentWord",currentWord)<Esc>^
+" endfunc
+" nnoremap gll :call LogIt()
+" nnoremap  <leader>iu :exe "grep -R " . shellescape(expand("<cWORD>")) . " ."<cr>
+" nnoremap <leader>iu :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
+
 
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
